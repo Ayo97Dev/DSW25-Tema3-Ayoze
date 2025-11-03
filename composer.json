@@ -1,0 +1,20 @@
+{
+    "name": "dsw/blog",
+    "description": "Tema3 DSW Acceso a Datos. Ejemplos BLog",
+    "type": "project",
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dsw\\Blog\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ayo",
+            "email": "Ayomenfum@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}

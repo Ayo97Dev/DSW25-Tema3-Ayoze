@@ -14,7 +14,7 @@
     "forwardPorts": [8080],
 
     // Comando a ejecutar después de que se cree el contenedor
-    "postStartCommand": "php -S 0.0.0.0:8080 -t public/",
+    "postStartCommand": "php -S 0.0.0.0:8080 -t public/ && composer install",
 
     // Añade extensiones de VS Code recomendadas para este entorno
     "customizations": {
