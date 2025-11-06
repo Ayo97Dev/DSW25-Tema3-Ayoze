@@ -6,7 +6,7 @@ require_once '../vendor/autoload.php';
 require_once 'conexion.php';
 
 if (isset($_POST['id'], $_POST['name'], $_POST['email'])) {
-    $sql = "UPDATE users SET name=:name, email=:email WHERE id=:id";
+    $sql = "UPDATE user SET name=:name, email=:email WHERE id=:id";
     $stmt = $pdo->prepare($sql);
 
     $stmt->execute([

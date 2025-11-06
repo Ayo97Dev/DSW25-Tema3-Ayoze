@@ -6,7 +6,7 @@ require_once 'conexion.php';
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     // Busco en la base de datos el usuario con ese id.
-    $sql = "SELECT id, name, email FROM users WHERE id = :id";
+    $sql = "SELECT id, name, email FROM user WHERE id = :id";
     $stmt = $pdo->prepare($sql);
     $stmt->execute(['id' => $id]);
 

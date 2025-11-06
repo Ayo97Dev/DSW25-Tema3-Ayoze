@@ -11,7 +11,7 @@ require_once 'conexion.php';
 // Consulta SQL o manipulación del a base de datos.
 if (isset($_GET['id'])) {
     // Borrar el id
-    $sql = "DELETE FROM users WHERE id = :id";
+    $sql = "DELETE FROM user WHERE id = :id";
     $stmt = $pdo->prepare($sql);
     $stmt->execute(['id' => $_GET['id']]);
 }

@@ -3,11 +3,16 @@
 
 require_once '../vendor/autoload.php';
 
-require_once 'conexion.php';
+use Dsw\Blog\Database;
 
 // Consulta SQL o manipulación del a base de datos.
+try {
+    $pdo = Database::getConnection();
+} catch (Exception $e) {
+    die("Error de conexión: " . $e->getMessage());
+}
 
-$sql = "SELECT id, name, email, register_date FROM users";
+$sql = "SELECT id, name, email, created_at FROM user";
 $stmt = $pdo->prepare($sql);
 
 $stmt->execute();
@@ -54,7 +59,7 @@ $users = $stmt->fetchAll();
             $user['id'],
             $user['name'],
             $user['email'],
-            $user['register_date']
+            $user['created_at']
         );
         echo "<td>";
         printf('<a href="edit.php?id=%s">Editar</a> | ',

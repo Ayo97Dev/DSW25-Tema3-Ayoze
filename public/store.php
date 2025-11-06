@@ -5,7 +5,7 @@ require_once '../vendor/autoload.php';
 
 require_once 'conexion.php';
 
-$sql = "INSERT INTO users (name, email) VALUES(:name, :email)";
+$sql = "INSERT INTO user (name, email) VALUES(:name, :email)";
 $stmt = $pdo->prepare($sql);
 
 $stmt->execute([
