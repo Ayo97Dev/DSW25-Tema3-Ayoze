@@ -9,6 +9,8 @@ class Database
 {
     private static ?PDO $connection = null;
 
+    // patron singleton para obtener la conexión a la base de datos
+    // devuelve una instancia de PDO y la reutiliza si ya existe
     public static function getConnection(): PDO
     {
         if (self::$connection) {
