@@ -58,5 +58,18 @@ class PostDAO {
             );
         }
         return $posts;
-    } 
+    }
+
+    public function create(Post $post): Post {
+        $sql = "INSERT INTO posts (title, body, user_id) VALUES (:title, :body, :user_id)";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([
+            'title' => $post->getTitle(),
+            'body' => $post->getBody(),
+            'user_id' => $post->getUserId()
+        ]);
+
+        $post->setId($this->conn->lastInsertId());
+        return $post;
+    }
 }

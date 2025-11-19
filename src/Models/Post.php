@@ -9,7 +9,7 @@ class Post {
         private ?int $id,
         private string $title,
         private string $body,
-        private DateTime $publicationDate,
+        private ?DateTime $publicationDate,
         private int $userId
     ) {}
 
