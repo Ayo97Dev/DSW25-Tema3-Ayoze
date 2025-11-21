@@ -5,6 +5,8 @@ use Dsw\Blog\DAO\UserDAO;
 
 require_once '../bootstrap.php';
 
+accessControl($user); // No hay que poner el level porque está 'user' por defecto.
+
 $postDAO = new PostDAO($conn);
 $posts = $postDAO->getAll();
 

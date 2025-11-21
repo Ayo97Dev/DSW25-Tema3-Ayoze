@@ -5,6 +5,8 @@ use Dsw\Blog\DAO\UserDAO;
 
 require_once '../bootstrap.php';
 
+accessControl($user, 'admin'); 
+
 $userDAO = new UserDAO($conn);
 $users = $userDAO->getAll();
 
