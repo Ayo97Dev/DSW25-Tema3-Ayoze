@@ -18,7 +18,7 @@ if ($user) {
             <ul>
                 <li><a href="index.php">Inicio</a></li>
             <?php if ($user) { 
-                    if ($user->getLevel() === "admin") {
+                    if ($user->isAdmin()) {
             ?>
             
                 <li><a href="users.php">Usuarios</a></li>
